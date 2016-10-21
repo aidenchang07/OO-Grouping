@@ -44,11 +44,13 @@ public class Client {
 		/* 顯示四技共有幾個學生 */
 		System.out.println("此班的四技學生人數共有 : " + type2.getLength());
 		
+		System.out.println("----------------------------");
+		
 		IStudentIterator courseIterator = course.getIterator();
 		
 		while(courseIterator.hasNext()) {
 			College item = (College)courseIterator.next();
-			System.out.println("顯示總數 : " + item.getInfo());
+			System.out.println("--" + item.getInfo());
 		}
 
 	}
