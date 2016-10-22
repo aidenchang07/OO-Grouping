@@ -67,7 +67,17 @@ public class Client {
 		}
 		
 		System.out.println("----------------------------");
-
+		
+//		while (courseIterator.hasNext()) {
+//			System.out.println("¦³");
+//			System.out.println(courseIterator.next());
+//		}
+//		
+//		while (courseIterator.hasNext()) {
+//			System.out.println("¦³");
+//			System.out.println(courseIterator.next());
+//		}
+		
 	}
 
 }

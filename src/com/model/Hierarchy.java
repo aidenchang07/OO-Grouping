@@ -1,7 +1,6 @@
 package com.model;
 
 import java.util.ArrayList;
-import com.iterator.IStudentIterator;
 import com.iterator.StudentIterator;
 
 public class Hierarchy implements College {
@@ -11,7 +10,7 @@ public class Hierarchy implements College {
 	
 	public Hierarchy(String studentType) {
 		this.studentType = studentType;
-		list = new ArrayList<College>();
+		this.list = new ArrayList<College>();
 	}
 	
 	@Override
@@ -21,19 +20,22 @@ public class Hierarchy implements College {
 		return info;
 	}
 	
-	public void add(College child) {
-		list.add(child);
+	public boolean add(College child) {
+		this.list.add(child);
+		return true;
     }
 
-    public void remove(College child) {
-    	list.remove(child);
+    public boolean remove(College child) {
+    	this.list.remove(child);
+    	return true;
     }
     
     public int getLength() {
-        return list.size();
+        return this.list.size();
     }
     
-    public IStudentIterator getIterator() {
+    @Override
+    public StudentIterator getIterator() {
     	return new StudentIterator(this.list);
     }
 

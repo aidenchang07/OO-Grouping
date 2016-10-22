@@ -1,6 +1,8 @@
 package com.iterator;
 
 import java.util.ArrayList;
+import java.util.NoSuchElementException;
+
 import com.model.College;
 
 public class StudentIterator implements IStudentIterator {
@@ -15,16 +17,21 @@ public class StudentIterator implements IStudentIterator {
 
 	@Override
 	public boolean hasNext() {
-        return index < list.size();
+		if(index < list.size()) {
+			return true;
+		} else {
+			index = 0;
+			return false;
+		}
 	}
 
 	@Override
 	public College next() {
-		return this.list.get(index++);
-	}
-	
-	public ArrayList<College> getAllChildren() {
-		return  this.list;
+		if(hasNext()) {
+			return this.list.get(index++);
+		} else {
+			throw new NoSuchElementException();
+		}
 	}
 	
 }
