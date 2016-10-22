@@ -1,7 +1,7 @@
 package com.model;
 
 import java.util.Random;
-import com.iterator.IStudentIterator;
+import com.iterator.StudentIterator;
 
 public class Client {
 
@@ -46,12 +46,27 @@ public class Client {
 		
 		System.out.println("----------------------------");
 		
-		IStudentIterator courseIterator = course.getIterator();
+		StudentIterator courseIterator = (StudentIterator) course.getIterator();
+		StudentIterator type1Iterator = (StudentIterator) type1.getIterator();
+		StudentIterator type2Iterator = (StudentIterator) type2.getIterator();
+		
 		
 		while(courseIterator.hasNext()) {
-			College item = (College)courseIterator.next();
+			College item = courseIterator.next();
 			System.out.println("--" + item.getInfo());
 		}
+		
+		while(type1Iterator.hasNext()) {
+			College item = type1Iterator.next();
+			System.out.println("--" + item.getInfo());
+		}
+		
+		while(type2Iterator.hasNext()) {
+			College item = type2Iterator.next();
+			System.out.println("--" + item.getInfo());
+		}
+		
+		System.out.println("----------------------------");
 
 	}
 

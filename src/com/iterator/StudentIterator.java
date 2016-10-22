@@ -23,4 +23,8 @@ public class StudentIterator implements IStudentIterator {
 		return this.list.get(index++);
 	}
 	
+	public ArrayList<College> getAllChildren() {
+		return  this.list;
+	}
+	
 }
