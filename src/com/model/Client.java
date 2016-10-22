@@ -1,6 +1,5 @@
 package com.model;
 
-import java.util.ArrayList;
 import java.util.Random;
 import com.iterator.StudentIterator;
 
@@ -13,7 +12,6 @@ public class Client {
 		System.out.println(course.getInfo());
 		
 		System.out.println(getTreeInfo(course));
-		
 	}
 	
 	public static Hierarchy getCourseTree() {
@@ -68,13 +66,23 @@ public class Client {
 		Leaf leaf38 = new Leaf("A10423038", rand.nextInt(100), rand.nextInt(100));
 		Leaf leaf39 = new Leaf("A10423039", rand.nextInt(100), rand.nextInt(100));
 		Leaf leaf40 = new Leaf("A10423040", rand.nextInt(100), rand.nextInt(100));
+		Leaf leaf41 = new Leaf("A10423041", rand.nextInt(100), rand.nextInt(100));
+		Leaf leaf42 = new Leaf("A10423042", rand.nextInt(100), rand.nextInt(100));
+		Leaf leaf43 = new Leaf("A10423043", rand.nextInt(100), rand.nextInt(100));
+		Leaf leaf44 = new Leaf("A10423044", rand.nextInt(100), rand.nextInt(100));
+		Leaf leaf45 = new Leaf("A10423045", rand.nextInt(100), rand.nextInt(100));
+		Leaf leaf46 = new Leaf("A10423046", rand.nextInt(100), rand.nextInt(100));
+		Leaf leaf47 = new Leaf("A10423047", rand.nextInt(100), rand.nextInt(100));
+		Leaf leaf48 = new Leaf("A10423048", rand.nextInt(100), rand.nextInt(100));
+		Leaf leaf49 = new Leaf("A10423049", rand.nextInt(100), rand.nextInt(100));
+		Leaf leaf50 = new Leaf("A10423050", rand.nextInt(100), rand.nextInt(100));
 		
 		/* 開始組織架構 */
 		/* 修OOSE的學生分為二技生和四技生 */
 		course.add(twoYearCollege);
 		course.add(fourYearCollege);
 		
-		/*  */
+		/* 共有50位學生 */
 		twoYearCollege.add(leaf01);
 		twoYearCollege.add(leaf02);
 		twoYearCollege.add(leaf03);
@@ -115,14 +123,25 @@ public class Client {
 		fourYearCollege.add(leaf38);
 		fourYearCollege.add(leaf39);
 		fourYearCollege.add(leaf40);
+		fourYearCollege.add(leaf41);
+		fourYearCollege.add(leaf42);
+		fourYearCollege.add(leaf43);
+		fourYearCollege.add(leaf44);
+		fourYearCollege.add(leaf45);
+		fourYearCollege.add(leaf46);
+		fourYearCollege.add(leaf47);
+		fourYearCollege.add(leaf48);
+		fourYearCollege.add(leaf49);
+		fourYearCollege.add(leaf50);
 		
 		return course;
 	}
-	
+
 	public static String getTreeInfo(Hierarchy root) {
-		ArrayList<College> studentList = root.getStudentList();
+		StudentIterator studentList = root.getIterator();
 		String info = "";
-		for(College s : studentList) {
+		while(studentList.hasNext()) {
+			College s = (College)studentList.next();
 			if(s instanceof Leaf) {
 				info = info + s.getInfo() + "\n";
 			} else {
@@ -131,4 +150,5 @@ public class Client {
 		}
 		return info;
 	}
+	
 }
