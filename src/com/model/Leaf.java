@@ -1,7 +1,5 @@
 package com.model;
 
-import com.iterator.StudentIterator;
-
 public class Leaf implements College {
 	
 	private String id;
@@ -14,18 +12,13 @@ public class Leaf implements College {
 		this.programAbility = programAbility;
 	}
 	
+	@Override
 	public String getInfo() {
 		String info = "";
 		info = "學號 : " + this.id;
 		info = info + "\t英文能力 : " + this.englishAbility;
 		info = info + "\t程式能力 : " + this.programAbility;
 		return info;
-	}
-
-	@Override
-	public StudentIterator getIterator() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 	
 }

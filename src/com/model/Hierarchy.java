@@ -30,17 +30,8 @@ public class Hierarchy implements College {
     	return true;
     }
     
-    public int getLength() {
-        return this.list.size();
-    }
-    
-    @Override
     public StudentIterator getIterator() {
     	return new StudentIterator(this.list);
-    }
-    
-    public ArrayList<College> getStudentList() {
-    	return this.list;
     }
 
 }
