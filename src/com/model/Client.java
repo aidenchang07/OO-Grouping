@@ -2,6 +2,9 @@ package com.model;
 
 import java.util.Random;
 import com.iterator.StudentIterator;
+import com.strategy.BestEnglishAbilityGrouping;
+import com.strategy.BestProgramAbilityGrouping;
+import com.strategy.ContextStrategy;
 
 public class Client {
 
@@ -12,6 +15,17 @@ public class Client {
 		System.out.println(course.getInfo());
 		
 		System.out.println(getTreeInfo(course));
+		
+		System.out.println("--------------------------------------------");
+		
+		ContextStrategy contextStrategy;
+		
+		contextStrategy = new ContextStrategy(new BestEnglishAbilityGrouping());
+		contextStrategy.grouping();
+		
+		contextStrategy = new ContextStrategy(new BestProgramAbilityGrouping());
+		contextStrategy.grouping();
+		
 	}
 	
 	public static Hierarchy getCourseTree() {

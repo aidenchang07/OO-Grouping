@@ -8,8 +8,8 @@ public class ContextStrategy {
 		this.strategy = strategy;
 	}
 	
-	public void bestAbility() {
-		this.strategy.bestAbility();
+	public void grouping() {
+		this.strategy.grouping();
 	}
 	
 }

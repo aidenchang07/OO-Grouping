@@ -1,5 +1,5 @@
 package com.strategy;
 
 public interface IStrategy {
-	public void bestAbility();
+	public void grouping();
 }
