@@ -38,5 +38,9 @@ public class Hierarchy implements College {
     public StudentIterator getIterator() {
     	return new StudentIterator(this.list);
     }
+    
+    public ArrayList<College> getStudentList() {
+    	return this.list;
+    }
 
 }
