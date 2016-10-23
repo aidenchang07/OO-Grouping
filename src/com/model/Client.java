@@ -16,7 +16,7 @@ public class Client {
 		
 		System.out.println("學號 , 英文能力, 程式能力");
 		
-		System.out.println(getTreeInfo(course));
+//		System.out.println(getTreeInfo(course));
 		
 		System.out.println("--------------------------------------------");
 		
@@ -27,6 +27,8 @@ public class Client {
 		
 		contextStrategy = new ContextStrategy(new BestProgramAbilityGrouping());
 		contextStrategy.grouping(getTreeInfo(course));
+		
+		
 		
 	}
 	

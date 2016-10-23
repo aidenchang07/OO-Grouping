@@ -16,8 +16,8 @@ public class Leaf implements College {
 	public String getInfo() {
 		String info = "";
 		info = this.id;
-		info = info + ", " + this.englishAbility;
-		info = info + ", " + this.programAbility;
+		info = info + "," + this.englishAbility;
+		info = info + "," + this.programAbility;
 		return info;
 	}
 	
