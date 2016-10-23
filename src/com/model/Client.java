@@ -28,6 +28,15 @@ public class Client {
 		contextStrategy = new ContextStrategy(new BestProgramAbilityGrouping());
 		contextStrategy.grouping(getTreeInfo(course));
 		
+//		Random rand = new Random();
+//		Hierarchy twoYearCollege = new Hierarchy("TwoYearCollege");
+//		Leaf leaf01 = new Leaf("A10423001", rand.nextInt(100), rand.nextInt(100));
+//		Leaf leaf02 = new Leaf("A10423002", rand.nextInt(100), rand.nextInt(100));
+//		twoYearCollege.add(leaf01);
+//		twoYearCollege.add(leaf02);
+//		List<Leaf> list1 = Arrays.asList(leaf01, leaf02);
+//		Collections.sort(list1);
+//		System.out.println(list1);
 		
 		
 	}
@@ -161,9 +170,9 @@ public class Client {
 		while(studentList.hasNext()) {
 			College s = (College)studentList.next();
 			if(s instanceof Leaf) {
-				info = info + s.getInfo() + "\n";
+				info = info + s.getInfo() + ",";
 			} else {
-				info = info + s.getInfo() + "\n" + getTreeInfo((Hierarchy) s);
+				info = info + s.getInfo() + "," + getTreeInfo((Hierarchy) s);
 			}
 		}
 		return info;
