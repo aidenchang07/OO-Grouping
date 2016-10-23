@@ -15,9 +15,9 @@ public class Leaf implements College {
 	@Override
 	public String getInfo() {
 		String info = "";
-		info = "學號 : " + this.id;
-		info = info + "\t英文能力 : " + this.englishAbility;
-		info = info + "\t程式能力 : " + this.programAbility;
+		info = this.id;
+		info = info + ", " + this.englishAbility;
+		info = info + ", " + this.programAbility;
 		return info;
 	}
 	

@@ -8,8 +8,8 @@ public class ContextStrategy {
 		this.strategy = strategy;
 	}
 	
-	public void grouping() {
-		this.strategy.grouping();
+	public void grouping(String studentList) {
+		this.strategy.grouping(studentList);
 	}
 	
 }
