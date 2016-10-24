@@ -1,6 +1,7 @@
 package com.strategy;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -9,14 +10,10 @@ import com.model.Leaf;
 public class BestEnglishAbilityGrouping implements IStrategy {
 
 	@Override
-	public void grouping() {
+	public void grouping(List<Leaf> leafList) {
 		
-		System.out.println("~~~grouping~~~");
-		
-	}
-
-	@Override
-	public void setList(List<Leaf> leafList) {
+		/* 進行數組排序 */
+		Collections.sort(leafList);
 		
 		String[] group = new String[5];
 		
@@ -25,29 +22,22 @@ public class BestEnglishAbilityGrouping implements IStrategy {
 			group[i] = "";
 		}
 		
-		System.out.println(leafList.get(0));
+		/* 測試，使否能取出第 1 位學生資訊 */
+//		System.out.println(leafList.get(0));
 		
+		/* 把最高分的這 5 位，依序各個放入第 1 ~ 5 組 */
 		for(int i = 0; i < 5; i++) {
 			group[i] += leafList.get(i);
 		}
 		
-//		group01 += leafList.get(0);
-//		group02 += leafList.get(1);
-//		group03 += leafList.get(2);
-//		group04 += leafList.get(3);
-//		group05 += leafList.get(4);
+		/* 測試，列出這 5 組的最高分 */
+//		for(int i = 0; i < 5; i++) {
+//			System.out.println("第 " + (i + 1) + " 組 : " + group[i]);
+//		}
 		
-		for(int i = 0; i < 5; i++) {
-			System.out.println("已加入 String : " + group[i]);
-		}
-		
-//		System.out.println("已加入 String : " + group01);
-//		System.out.println("已加入 String : " + group02);
-//		System.out.println("已加入 String : " + group03);
-//		System.out.println("已加入 String : " + group04);
-//		System.out.println("已加入 String : " + group05);
-		
-		int index = 1;
+		/* 從 0 開始，如果設為 1 會下標越界 */
+		int index = 0;
+		/* 限制抽取 50 次 */
 		int randomMax = 50;
 		int randomIndex = 0;
 		
@@ -58,16 +48,26 @@ public class BestEnglishAbilityGrouping implements IStrategy {
 			random.add(i);
 		}
 		
-		System.out.println("我有 : " + random.size());
+		/* 測試，顯示亂數用的 ArrayList，共有幾組資料(使用前) */
+//		System.out.println("亂數用的 ArrayList 內有 " + random.size() + " 組資料");
 		
+		/**
+		 * 以下採用"亂數不重複"的技術來抽學生
+		 */
 		int count = 1;
 		int groupIndex = 0;
 		while(random.size() != 0) {
 			randomIndex = rand.nextInt(randomMax--);
-			System.out.println("亂數的我，要取第 " + randomIndex + " 的數字");
+			
+			/* 測試，顯示目前已取到第幾個的數字 */
+//			System.out.println("亂數的我，要取第 " + randomIndex + " 的數字");
+			
 			try {
 				if(random.get(randomIndex) >= 5) {
-					System.out.println("index " + index + " : " + random.get(randomIndex));
+					
+					/* 測試，顯示將要取得的數字 */
+//					System.out.println("index " + index + " : " + random.get(randomIndex));
+					
 					if(count <= 8) {
 						group[groupIndex] += "、" + leafList.get(randomIndex);
 						count++;
@@ -88,15 +88,14 @@ public class BestEnglishAbilityGrouping implements IStrategy {
 			index++;
 		}
 		
-		System.out.println("我還有 : " + random.size());
+		/* 測試，顯示亂數用的 ArrayList，共有幾組資料(已使用) */
+//		System.out.println("亂數用的 ArrayList 內有 " + random.size() + " 組資料");
 		
+		/* 列出這 5 組的成員 */
 		for(int i = 0; i < 5; i++) {
 			System.out.println("第 " + (i + 1) + " 組 : " + group[i]);
 		}
 		
-		
-		
-//		System.out.println(leafList);
 	}
 
 }

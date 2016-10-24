@@ -1,7 +1,6 @@
 package com.model;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 import com.iterator.StudentIterator;
@@ -13,26 +12,15 @@ public class Client {
 
 	public static void main(String[] args) {
 		
-		Hierarchy course = getCourseTree();
-		
-		System.out.println(course.getInfo());
-		
-		System.out.println("學號 , 英文能力, 程式能力");
-		
-//		System.out.println(getTreeInfo(course));
-		
-		System.out.println("--------------------------------------------");
-		
 		ContextStrategy contextStrategy;
 		
-		contextStrategy = new ContextStrategy(new BestEnglishAbilityGrouping());
-//		contextStrategy.grouping(getTreeInfo(course));
+		Hierarchy course = getCourseTree();
 		
+//		System.out.println(course.getInfo());
 		
-//		contextStrategy = new ContextStrategy(new BestProgramAbilityGrouping());
-//		contextStrategy.grouping(getTreeInfo(course));
+//		System.out.println("學號 , 英文能力, 程式能力");
 		
-		System.out.println("--------------------------------------------");
+//		System.out.println(getTreeInfo(course));
 		
 		Random rand = new Random();
 		
@@ -88,7 +76,7 @@ public class Client {
 		Leaf leaf49 = new Leaf("A10423049", rand.nextInt(100), rand.nextInt(100));
 		Leaf leaf50 = new Leaf("A10423050", rand.nextInt(100), rand.nextInt(100));
 
-		List<Leaf> list1 = Arrays.asList(
+		List<Leaf> studentList = Arrays.asList(
 				leaf01,
 				leaf02,
 				leaf03,
@@ -139,16 +127,18 @@ public class Client {
 				leaf48,
 				leaf49,
 				leaf50);
-		Collections.sort(list1);
 		
-		System.out.println("-------------史上最蠢寫法---------------");
+		System.out.println("---------------依照英文能力分組---------------");
 		
-//		System.out.println(list1);
-//		
-//		System.out.println(list1.get(0));
+		contextStrategy = new ContextStrategy(new BestEnglishAbilityGrouping());
 		
-		contextStrategy.setList(list1);
-		contextStrategy.grouping();
+		contextStrategy.grouping(studentList);
+		
+		System.out.println("---------------依照程式能力分組---------------");
+		
+		contextStrategy = new ContextStrategy(new BestProgramAbilityGrouping());
+		
+		contextStrategy.grouping(studentList);
 		
 	}
 	
