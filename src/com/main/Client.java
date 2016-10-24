@@ -3,7 +3,6 @@ package com.main;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
-
 import com.composite.College;
 import com.composite.Hierarchy;
 import com.composite.Leaf;
@@ -18,7 +17,7 @@ public class Client {
 		
 		ContextStrategy contextStrategy;
 		
-		Hierarchy course = getCourseTree();
+//		Hierarchy course = getCourseTree();
 		
 //		System.out.println(course.getInfo());
 		

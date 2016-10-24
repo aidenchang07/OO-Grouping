@@ -1,6 +1,6 @@
 package com.composite;
 
-public class Leaf implements College, Comparable<Leaf> {
+public class Leaf implements College {
 	
 	private String id;
 	private int englishAbility;
@@ -31,11 +31,6 @@ public class Leaf implements College, Comparable<Leaf> {
 
 	public int getProgramAbility() {
 		return programAbility;
-	}
-
-	@Override
-	public int compareTo(Leaf o) {
-		return o.englishAbility - this.englishAbility;
 	}
 	
 	@Override

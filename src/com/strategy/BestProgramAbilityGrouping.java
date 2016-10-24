@@ -5,14 +5,16 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
+import com.comparator.DescProgramComparator;
 import com.composite.Leaf;
 
 public class BestProgramAbilityGrouping implements IStrategy {
 
 	@Override
 	public void grouping(List<Leaf> leafList) {
+		
 		/* 進行數組排序 */
-		Collections.sort(leafList);
+		Collections.sort(leafList, new DescProgramComparator());
 		
 		String[] group = new String[5];
 		

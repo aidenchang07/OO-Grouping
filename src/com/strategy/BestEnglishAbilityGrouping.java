@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
+import com.comparator.DescEnglishComparator;
 import com.composite.Leaf;
 
 public class BestEnglishAbilityGrouping implements IStrategy {
@@ -13,7 +14,7 @@ public class BestEnglishAbilityGrouping implements IStrategy {
 	public void grouping(List<Leaf> leafList) {
 		
 		/* 進行數組排序 */
-		Collections.sort(leafList);
+		Collections.sort(leafList, new DescEnglishComparator());
 		
 		String[] group = new String[5];
 		

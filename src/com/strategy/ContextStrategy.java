@@ -1,7 +1,6 @@
 package com.strategy;
 
 import java.util.List;
-
 import com.composite.Leaf;
 
 public class ContextStrategy {
@@ -12,8 +11,8 @@ public class ContextStrategy {
 		this.strategy = strategy;
 	}
 	
-	public void grouping(List<Leaf> leafList) {
-		this.strategy.grouping(leafList);
+	public void grouping(List<Leaf> studentList) {
+		this.strategy.grouping(studentList);
 	}
 	
 }
