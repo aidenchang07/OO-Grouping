@@ -1,4 +1,4 @@
-package com.model;
+package com.composite;
 
 import java.util.ArrayList;
 import com.iterator.StudentIterator;

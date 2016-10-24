@@ -1,4 +1,4 @@
-package com.model;
+package com.composite;
 
 public class Leaf implements College, Comparable<Leaf> {
 	

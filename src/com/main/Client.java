@@ -1,8 +1,12 @@
-package com.model;
+package com.main;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
+
+import com.composite.College;
+import com.composite.Hierarchy;
+import com.composite.Leaf;
 import com.iterator.StudentIterator;
 import com.strategy.BestEnglishAbilityGrouping;
 import com.strategy.BestProgramAbilityGrouping;

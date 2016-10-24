@@ -3,7 +3,7 @@ package com.iterator;
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
 
-import com.model.College;
+import com.composite.College;
 
 public class StudentIterator implements IStudentIterator {
 	

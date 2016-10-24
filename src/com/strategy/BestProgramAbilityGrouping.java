@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
-import com.model.Leaf;
+import com.composite.Leaf;
 
 public class BestProgramAbilityGrouping implements IStrategy {
 

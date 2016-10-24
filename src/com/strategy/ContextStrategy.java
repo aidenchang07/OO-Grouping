@@ -1,7 +1,8 @@
 package com.strategy;
 
 import java.util.List;
-import com.model.Leaf;
+
+import com.composite.Leaf;
 
 public class ContextStrategy {
 	
