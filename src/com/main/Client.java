@@ -21,7 +21,7 @@ public class Client {
 		
 //		System.out.println(course.getInfo());
 		
-//		System.out.println("學號 , 英文能力, 程式能力");
+//		System.out.println("StudentID , EnglishAbility, CodingAbility");
 		
 //		System.out.println(getTreeInfo(course));
 		
@@ -131,13 +131,13 @@ public class Client {
 				leaf49,
 				leaf50);
 		
-		System.out.println("---------------依照英文能力分組---------------");
+		System.out.println("---------------EnglishAbilityGrouping---------------");
 		
 		contextStrategy = new ContextStrategy(new BestEnglishAbilityGrouping());
 		
 		contextStrategy.grouping(studentList);
 		
-		System.out.println("---------------依照程式能力分組---------------");
+		System.out.println("---------------ProgramAbilityGrouping---------------");
 		
 		contextStrategy = new ContextStrategy(new BestProgramAbilityGrouping());
 		

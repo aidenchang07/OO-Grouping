@@ -94,7 +94,7 @@ public class BestProgramAbilityGrouping implements IStrategy {
 		
 		/* 列出這 5 組的成員 */
 		for(int i = 0; i < 5; i++) {
-			System.out.println("第 " + (i + 1) + " 組 : " + group[i]);
+			System.out.println("Group " + (i + 1) + " : " + group[i]);
 		}
 	}
 
